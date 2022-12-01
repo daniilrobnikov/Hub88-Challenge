@@ -1,0 +1,25 @@
+.spinner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 104px;
+}
+
+.spinner_border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.125em;
+  border-radius: 50%;
+  border: 0.25em solid currentcolor;
+  border-right-color: transparent;
+  -webkit-animation: 0.75s linear infinite spinner-border;
+  animation: 0.75s linear infinite spinner-border;
+}
+
+@keyframes spinner-border {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
