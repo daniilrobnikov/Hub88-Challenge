@@ -17,7 +17,7 @@ git clone https://github.com/daniilrobnikov/Hub88-Challenge.git
 
 ## Install dependencies
 
-After you clone your project down, in your terminal open project's folder and run `npm install` to build all the dependencies in the project.
+After you clone your project down, in your terminal open project's folder with `cd Hub88-Challenge` and run `npm install` to build all the dependencies in the project.
 
 ## Run in development mode
 
