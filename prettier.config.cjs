@@ -1,5 +1,5 @@
 /** @type {import("prettier").Config} */
-const prettierConfig = {
+module.exports = {
   $schema: "https://json.schemastore.org/prettierrc",
   arrowParens: "always",
   printWidth: 80,
@@ -9,8 +9,10 @@ const prettierConfig = {
   trailingComma: "all",
   tabWidth: 2,
 
-  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+  plugins: [
+    require.resolve("prettier-plugin-tailwindcss"),
+  ],
   pluginSearchDirs: false,
 };
 
-export default prettierConfig;
+

@@ -12,12 +12,12 @@ export default function CodeFilter({ filter, setFilter }: CodeFilterProps) {
       >
         Country Code
       </label>
-      <div className="mt-1 relative rounded-md drop-shadow-md">
+      <div className="relative mt-1 rounded-md drop-shadow-md">
         <input
           type="text"
           name="code-filter"
           id="code-filter"
-          className="block w-full p-3 pr-10 rounded-md  placeholder-gray-400 focus:outline-none sm:text-sm dark:placeholder-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700"
+          className="block w-full rounded-md p-3 pr-10  placeholder-gray-400 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-600 sm:text-sm"
           placeholder="Enter country code"
           value={filter}
           onChange={(e) => setFilter(e.target.value.toUpperCase())}

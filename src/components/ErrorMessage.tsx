@@ -22,7 +22,7 @@ export default function ErrorMessage({ children }: ErrorProps) {
             {children}
           </h3>
           <div className="mt-2 text-sm text-red-700 dark:text-red-400">
-            <ul role="list" className="list-disc pl-5 space-y-1">
+            <ul role="list" className="list-disc space-y-1 pl-5">
               <li>Country code is 2 characters long</li>
               <li>Country code can only contain letters</li>
             </ul>

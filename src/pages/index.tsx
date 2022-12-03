@@ -27,8 +27,8 @@ export default function Home({ countries }: Countries) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen flex-1 flex flex-col justify-start items-center">
-        <div className="min-w-[40vw] mt-[25vh]">
+      <main className="flex min-h-screen flex-1 flex-col items-center justify-start">
+        <div className="mt-[25vh] min-w-[40vw]">
           <CodeFilter filter={filter} setFilter={setFilter} />
           {filteredCountries.length > 0 ? (
             <CountriesTable countries={filteredCountries} />
