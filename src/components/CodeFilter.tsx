@@ -1,6 +1,6 @@
 interface CodeFilterProps {
   filter: string;
-  setFilter: (filter: string) => void;
+  setFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function CodeFilter({ filter, setFilter }: CodeFilterProps) {
@@ -20,7 +20,7 @@ export default function CodeFilter({ filter, setFilter }: CodeFilterProps) {
           className="block w-full rounded-md p-3 pr-10  placeholder-gray-400 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-600 sm:text-sm"
           placeholder="Enter country code"
           value={filter}
-          onChange={(e) => setFilter(e.target.value.toUpperCase())}
+          onChange={(e) => setFilter(e)}
           aria-invalid="true"
           aria-describedby="code-filter-error"
         />

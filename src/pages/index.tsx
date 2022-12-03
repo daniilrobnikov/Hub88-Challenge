@@ -1,23 +1,29 @@
 import { gql } from "@apollo/client";
 import Head from "next/head";
+import { useState, ChangeEvent } from "react";
 import { client } from "../apollo-client/config";
 import CodeFilter from "../components/CodeFilter";
 import CountriesTable from "../components/CountriesTable";
 import ErrorMessage from "../components/ErrorMessage";
-import { useCountriesFilter } from "../hooks";
-
 interface Country {
   name: string;
   code: string;
 }
-
 interface Countries {
   countries: Country[];
 }
 
 export default function Home({ countries }: Countries) {
-  const { filter, setFilter, filteredCountries } =
-    useCountriesFilter(countries);
+  const [filter, setFilter] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+
+  const filterHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const str = e.target.value.toUpperCase();
+    setFilter(str);
+    setFilteredCountries(
+      countries.filter((country) => country.code.includes(str)),
+    );
+  };
 
   return (
     <>
@@ -29,7 +35,7 @@ export default function Home({ countries }: Countries) {
 
       <main className="flex min-h-screen flex-1 flex-col items-center justify-start">
         <div className="mt-[25vh] min-w-[40vw]">
-          <CodeFilter filter={filter} setFilter={setFilter} />
+          <CodeFilter filter={filter} setFilter={filterHandler} />
           {filteredCountries.length > 0 ? (
             <CountriesTable countries={filteredCountries} />
           ) : (
